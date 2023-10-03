@@ -4,7 +4,7 @@ import pickle
 import pandas as pd
 
 # Load the pre-trained model and encoders
-@st.cache(allow_output_mutation=True)
+@st.cache_data
 def load_model():
     with open('knn_car.pkl', 'rb') as file:
         model, buying_encoder, maint_encoder, doors_encoder, persons_encoder, lug_boot_encoder, safety_encoder, class_encode = pickle.load(file)
